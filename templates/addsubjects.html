@@ -10,25 +10,25 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h6 class="mb-0">Add Teachers</h6>
+                            <h6 class="mb-0">Add Subjects</h6>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="/teachers" method="POST">
-                        <h6 class="heading-small text-muted mb-4">Teacher information</h6>
+                    <form action="/subjects/add" method="POST">
+                        <h6 class="heading-small text-muted mb-4">Subject information</h6>
                         <div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Name</label>
-                                        <input type="text" name="name" id="input-username" class="form-control" placeholder="name">
+                                        <label class="form-control-label" for="input-username">Subject Name</label>
+                                        <input type="text" name="subject_name" id="input-username" class="form-control" placeholder="name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">ID Number</label>
-                                        <input type="number" name="teacher_id" id="input-username" class="form-control"
+                                        <label class="form-control-label" for="input-email">Subject Code</label>
+                                        <input type="text" name="subject_code" id="input-username" class="form-control"
                                             placeholder="ID Number">
                                     </div>
                                 </div>
@@ -36,15 +36,15 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Phone</label>
-                                        <input type="number" name="phone" id="input-username" class="form-control" placeholder="Phone">
+                                        <label class="form-control-label" for="input-username">Year</label>
+                                        <input type="number" name="year" id="input-username" class="form-control" placeholder="Phone">
                                     </div>
                                 </div>
-
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Email</label>
-                                        <input type="email" name="email" id="input-email" class="form-control" placeholder="Email">
+                                        <label class="form-control-label" for="input-email">Assigned Teacher ID</label>
+                                        <input type="text" name="teacher_id" id="input-username" class="form-control"
+                                            placeholder="ID Number">
                                     </div>
                                 </div>
                             </div>
