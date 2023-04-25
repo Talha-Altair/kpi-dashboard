@@ -1,0 +1,65 @@
+{% include 'head.html' %}
+
+<body class="g-sidenav-show">
+
+    {% include 'nav.html' %}
+
+    <div class="main-content" id="panel">
+        <div class="container-fluid pt-3">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h6 class="mb-0">Add Subjects</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="/subjects/pass" method="POST">
+                        <h6 class="heading-small text-muted mb-4">Subject information</h6>
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Subject Code</label>
+                                        <input type="text" name="subject_code" id="input-username" class="form-control"
+                                            placeholder="ID Number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Number of students passed</label>
+                                        <input type="number" name="num_students_passed" id="input-username" class="form-control" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Number of students Failed</label>
+                                        <input type="text" name="num_students_failed" id="input-username" class="form-control"
+                                            placeholder="ID Number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <div class="form-group">
+                                        <input type="submit" class="form-control" placeholder="Submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    '{% if alert_msg %}'
+        alert("{{ alert_msg }}");
+    '{% endif %}'
+
+</script>

@@ -44,6 +44,23 @@ def subjectsadd():
 
     return render_template("addsubjects.html")
 
+@app.route("/subjects/pass", methods=["GET", "POST"])
+def subjectspass():
+
+    if request.method == "POST":
+
+        payload = dict(request.form)
+
+        res = requests.post(BACKEND_URL + "/teaching/add_pass_fail", json=payload)
+
+        if res.status_code != 200:
+
+            return render_template("endsem_pass_fail.html", alert_msg="Something went wrong!")
+
+        return render_template("endsem_pass_fail.html", alert_msg="Pass fail data added successfully!")
+
+    return render_template("endsem_pass_fail.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True, host=HOST, port=PORT)
