@@ -1,8 +1,44 @@
-<style>
-    
-</style>
+
 {% include 'head.html' %}
 
+<style>
+     
+    .card-body{
+    box-shadow: 0 0 10px 0 #cc0052; 
+    }
+    .item:hover p, input:hover::placeholder {
+      color: #cc0052;
+      }
+      input:hover{
+        box-shadow: 0 0 10px 0 #cc0052;
+      }
+    .item input:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #cc0052;
+      color: #cc0052;
+      }
+      .button {
+        
+      width: 20%;
+      border: none;
+      border-radius: 5px; 
+      background: #cc0052;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 40%;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      align-items: center;
+      }
+      .button:hover {
+      background: #ff0066;
+      color:white;
+      font-weight: bolder;
+      }
+</style>
 <body class="g-sidenav-show">
 
     {% include 'nav.html' %}
@@ -20,7 +56,7 @@
                 <div class="card-body">
                     <form action="/subjects/add" method="POST">
                         <h6 class="heading-small text-muted mb-4">Subject information</h6>
-                        <div>
+
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -52,13 +88,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-1">
-                                    <div class="form-group">
-                                        <input type="submit" class="form-control" placeholder="Submit">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                <div class="btn-block">
+                                    <button type="submit" class="form-control button" placeholder="Submit">Submit</button>
+                                  </div>
+                    </div>
                     </form>
                 </div>
             </div>
