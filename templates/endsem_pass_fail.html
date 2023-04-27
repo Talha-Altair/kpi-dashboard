@@ -1,9 +1,18 @@
 {% include 'head.html' %}
 
 <style>
-     
+    body
+    {
+        margin-top: 30px;
+        background-color: wheat;
+    }
+    .card-header
+    {
+        text-align: center;
+        background-color: wheat;
+    }
     .card-body{
-    box-shadow: 0 0 10px 0 #cc0052; 
+    box-shadow: 0 0 30px 0 black; 
     }
     .item:hover p, input:hover::placeholder {
       color: #cc0052;
@@ -17,7 +26,6 @@
       color: #cc0052;
       }
       .button {
-        
       width: 20%;
       border: none;
       border-radius: 5px; 
@@ -37,6 +45,15 @@
       color:white;
       font-weight: bolder;
       }
+      
+
+      h2{
+        margin-left: 40%;
+        width: 20%;
+        /* border-radius: 10px;
+        background-color: #cc0052; */
+      }
+      
 </style>
 
 <body class="g-sidenav-show">
@@ -48,14 +65,14 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <div class="row align-items-center">
-                        <div class="col-8">
-                            <h6 class="mb-0">Add Subjects</h6>
+                        <div class="col-12">
+                            <h2 class="mb-0">Add Results</h2>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <form action="/subjects/pass" method="POST">
-                        <h6 class="heading-small text-muted mb-4">Subject information</h6>
+                        <h6 class="heading-small text-muted mb-4">Results information</h6>
                         <div>
                             <div class="row">
                                 <div class="col-lg-6">

@@ -1,5 +1,54 @@
 {% include 'head.html' %}
-
+<style>
+    body
+    {
+        margin-top: 30px;
+        background-color: wheat;
+    }
+    .card-header
+    {
+        text-align: center;
+        background-color: wheat;
+    }
+    .card-body{
+    box-shadow: 0 0 30px 0 black; 
+    }
+    .item:hover p, input:hover::placeholder {
+      color: #cc0052;
+      }
+      input:hover{
+        box-shadow: 0 0 10px 0 #cc0052;
+      }
+      select:hover{
+        box-shadow: 0 0 10px 0 #cc0052;    
+      }
+    .item input:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #cc0052;
+      color: #cc0052;
+      }
+      .button {
+        
+      width: 20%;
+      border: none;
+      border-radius: 5px; 
+      background: #cc0052;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 40%;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      align-items: center;
+      }
+      .button:hover {
+      background: #ff0066;
+      color:white;
+      font-weight: bolder;
+      }
+</style>
 <body class="g-sidenav-show">
 
     {% include 'nav.html' %}
@@ -9,8 +58,8 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <div class="row align-items-center">
-                        <div class="col-8">
-                            <h6 class="mb-0">Upload CSV</h6>
+                        <div class="col-12">
+                            <h2 class="mb-0">Upload CSV</h2>
                         </div>
                     </div>
                 </div>
@@ -42,10 +91,9 @@
                             </div>
                             <div class="row">
                                 <div class="btn-block">
-                                    <button type="submit" class="form-control button"
-                                        placeholder="Submit">Submit</button>
-                                </div>
-                            </div>
+                                    <button type="submit" class="form-control button" placeholder="Submit">Submit</button>
+                                  </div>
+                    </div>
                         </div>
                     </form>
                 </div>
