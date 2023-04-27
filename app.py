@@ -7,18 +7,37 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template("index.html")
+
 @app.route("/login")
 def login():
     return render_template("login.html")
 
+@app.route("/upload", methods=["GET", "POST"])
+def upload():
+
+    if request.method == "POST":
+
+        payload = dict(request.form)
+
+        _file = request.files['file']
+
+        payload['file'] = _file.read().decode("utf-8")
+
+        res = requests.post(BACKEND_URL + "/upload", json=payload)
+
+        if res.status_code != 200:
+
+            return render_template("upload.html", alert_msg="Something went wrong!")
+
+        return render_template("upload.html", alert_msg="Data uploaded successfully!")
+
+    return render_template("upload.html")
 
 @app.route("/teachers", methods=["GET", "POST"])
 def teachers():
     if request.method == "POST":
 
         payload = dict(request.form)
-
-        payload['subject_codes'] = []
 
         res = requests.post(BACKEND_URL + "/teaching/add", json=payload)
 

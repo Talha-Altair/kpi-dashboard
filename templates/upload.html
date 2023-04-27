@@ -1,0 +1,62 @@
+{% include 'head.html' %}
+
+<body class="g-sidenav-show">
+
+    {% include 'nav.html' %}
+
+    <div class="main-content" id="panel">
+        <div class="container-fluid pt-3">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h6 class="mb-0">Upload CSV</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Data</label>
+                                        <select name="name" id="input-username" class="form-control"
+                                        placeholder="Select from drop down">
+                                            <option value="teachers">teachers</option>
+                                            <option value="subjects">subjects</option>
+                                            <option value="endsem_pass_fail">endsem_pass_fail</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">file</label>
+                                        <input type="file" name="file" id="input-username" class="form-control"
+                                            placeholder="Phone">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="btn-block">
+                                    <button type="submit" class="form-control button"
+                                        placeholder="Submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    '{% if alert_msg %}'
+        alert("{{ alert_msg }}");
+    '{% endif %}'
+
+</script>
