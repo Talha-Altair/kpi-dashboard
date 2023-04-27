@@ -6,11 +6,38 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
-
-@app.route("/login")
-def login():
     return render_template("login.html")
+
+@app.route("/welcome", methods=["GET", "POST"])
+def login():
+    
+    if request.method == "POST":
+
+        payload = dict(request.form)
+
+        res = requests.post(BACKEND_URL + "/login", json=payload)
+
+        if res.status_code == 200:
+
+            return render_template("index.html")
+
+    return "Wrong credentials!"
+
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+
+    if request.method == "POST":
+
+        payload = dict(request.form)
+
+        res = requests.post(BACKEND_URL + "/signup", json=payload)
+
+        if res.status_code == 200:
+
+            return render_template("login.html")
+
+    return "Something went wrong!"
 
 @app.route("/upload", methods=["GET", "POST"])
 def upload():
