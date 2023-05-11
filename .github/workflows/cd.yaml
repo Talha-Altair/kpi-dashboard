@@ -17,13 +17,13 @@ jobs:
           cd /home/talha/KPI
           docker-compose down
           cd /home/talha/KPI/kpi-dashboard-ui
-          rm -rf __pycache__/
+          sudo rm -rf __pycache__/
           git pull
           cd /home/talha/KPI/kpi-admin
-          rm -rf __pycache__/
+          sudo rm -rf __pycache__/
           git pull
           cd /home/talha/KPI/kpi-backend
-          rm -rf __pycache__/ routes/__pycache__/
+          sudo rm -rf __pycache__/ routes/__pycache__/
           git pull
           cd /home/talha/KPI
           docker-compose up -d --build
