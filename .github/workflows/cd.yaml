@@ -1,0 +1,29 @@
+name: remote ssh command
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.HOST }}
+        port: ${{ secrets.PORT }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        script: |
+          cd /home/talha/KPI
+          docker-compose down
+          cd /home/talha/KPI/kpi-dashboard-ui
+          rm -rf __pycache__/
+          git pull
+          cd /home/talha/KPI/kpi-admin
+          rm -rf __pycache__/
+          git pull
+          cd /home/talha/KPI/kpi-backend
+          rm -rf __pycache__/ routes/__pycache__/
+          git pull
+          cd /home/talha/KPI
+          docker-compose up -d --build
