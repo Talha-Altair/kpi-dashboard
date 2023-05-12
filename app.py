@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from settings import HOST, PORT, BACKEND_URL
 import requests
-
+import json 
 app = Flask(__name__)
 
 @app.route("/")
@@ -48,7 +48,9 @@ def upload():
 
         _file = request.files['file']
 
-        payload['file'] = _file.read().decode("utf-8")
+        file_data = _file.read().decode("utf-8")
+
+        payload['data'] = json.loads(file_data)
 
         res = requests.post(BACKEND_URL + "/upload", json=payload)
 
